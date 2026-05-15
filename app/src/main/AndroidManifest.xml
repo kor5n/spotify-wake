@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SpotifyWake" >
+        android:theme="@style/Theme.SpotifyWake">
 
         <activity
             android:name=".MainActivity"
@@ -25,19 +25,15 @@
             </intent-filter>
 
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:host="callback"
-                    android:scheme="spotifywake"/>
+                    android:scheme="spotifywake" />
             </intent-filter>
 
         </activity>
     </application>
-
-
 
 </manifest>
