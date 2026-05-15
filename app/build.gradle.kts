@@ -21,12 +21,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders["redirectSchemeName"] = "spotifywake"
         manifestPlaceholders["redirectHostName"] = "callback"
-
         buildConfigField("String", "SPOTIFY_CLIENT_ID", "\"${localProperties["SPOTIFY_CLIENT_ID"]}\"")
         buildConfigField("String", "SPOTIFY_CLIENT_SECRET", "\"${localProperties["SPOTIFY_CLIENT_SECRET"]}\"")
     }
 
-    buildFeatures{
+    buildFeatures {
         buildConfig = true
     }
 

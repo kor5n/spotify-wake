@@ -1,6 +1,5 @@
 package com.example.spotifywake
 
-import com.example.spotifywake.BuildConfig
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -18,8 +17,8 @@ import java.net.URL
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val CLIENT_ID = BuildConfig.SPOTIFY_CLIENT_ID
-        private const val CLIENT_SECRET = BuildConfig.SPOTIFY_CLIENT_SECRET
+        private val CLIENT_ID = BuildConfig.SPOTIFY_CLIENT_ID
+        private val CLIENT_SECRET = BuildConfig.SPOTIFY_CLIENT_SECRET
         private const val REDIRECT_URI = "spotifywake://callback"
         private const val PLAYLIST_URI = "spotify:playlist:5l37TRiqGM4zBHTd9moGp4"
         private const val TAG = "MainActivity"
