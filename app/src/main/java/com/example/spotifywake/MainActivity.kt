@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -96,6 +97,18 @@ class MainActivity : AppCompatActivity() {
     private fun startPlayback(token: String) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
+
+                //start spotify app
+                withContext(Dispatchers.Main) {
+                    val intent = packageManager.getLaunchIntentForPackage("com.spotify.music")
+                    if (intent != null) {
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                    }
+                }
+
+                delay(3000)
+
                 val devicesConn = (URL("https://api.spotify.com/v1/me/player/devices")
                     .openConnection() as HttpURLConnection).apply {
                     requestMethod = "GET"
